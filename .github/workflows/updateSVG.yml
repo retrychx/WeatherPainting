@@ -1,7 +1,7 @@
 name: Update Weather Forecast SVG
 
 on:
-  push: # 移除分支限制，响应所有推送
+  push:
   schedule:
     - cron: "0 0 * * *"
 
@@ -21,17 +21,16 @@ jobs:
       - name: Checkout WeatherPainting
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: "3.x"
+          node-version: "16"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: npm install
 
       - name: Generate SVG
-        run: python generate_weather_svg.py
+        run: node generate_weather_svg.js
 
       - name: Checkout target repo
         uses: actions/checkout@v3
