@@ -1,6 +1,6 @@
 # WeatherPainting 
 
-English | [中文](README_zh.md)
+English | [中文](README_CN.md)
 
 ![alt text](src/weather_forecast.svg)
 
