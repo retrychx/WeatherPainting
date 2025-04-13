@@ -70,8 +70,8 @@ function getWeatherDescription(code) {
 // 获取天气数据并生成SVG
 async function generateWeatherSVG() {
   try {
-    const latitude = 39.9593; // 福州连江的纬度
-    const longitude = 116.2981; // 福州连江的经度
+    const latitude = 26.3174; // 福州连江的纬度
+    const longitude = 119.5384; // 福州连江的经度
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FShanghai&forecast_days=7`;
 
     const response = await fetch(url);
@@ -104,7 +104,7 @@ async function generateWeatherSVG() {
     <rect width="${svgWidth}" height="${svgHeight}" fill="transparent"/>
     <text x="${
       svgWidth / 2
-    }" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white" stroke="black" stroke-width="0.5">北京海淀七天天气预报</text>
+    }" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white" stroke="black" stroke-width="0.5">连江县七天天气预报</text>
 `;
 
     // 并行加载所有图标
