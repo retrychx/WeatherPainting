@@ -34,3 +34,11 @@ jobs:
 
       - name: Generate SVG
         run: npm run paint
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add ./src/weather_forecast.svg
+          git commit -m "Update weather forecast SVG" || exit 0
+          git push
