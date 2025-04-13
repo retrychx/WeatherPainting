@@ -70,6 +70,8 @@ function getWeatherDescription(code) {
 // 获取天气数据并生成SVG
 async function generateWeatherSVG() {
   try {
+    // TODO: 填写目标城市的经纬度
+    // 这里以福州连江为例
     const latitude = 26.3174; // 福州连江的纬度
     const longitude = 119.5384; // 福州连江的经度
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FShanghai&forecast_days=7`;
@@ -98,6 +100,7 @@ async function generateWeatherSVG() {
     }
 
     // 生成SVG
+    // TODO: 你可以手动修改生成SVG的title信息，这里默认为"连江县七天天气预报"
     const svgWidth = dailyData.length * 100;
     const svgHeight = 180;
     let fullSvgContent = `<svg width="${svgWidth}" height="${svgHeight}" xmlns="http://www.w3.org/2000/svg">
