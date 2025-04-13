@@ -29,8 +29,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Start Express Server
+        run: npm run start & sleep 5
+
       - name: Generate SVG
-        run: node generate_weather_svg.js
+        run: npm run paint
 
       - name: Checkout target repo
         uses: actions/checkout@v3
@@ -41,7 +44,7 @@ jobs:
 
       - name: Copy and commit SVG
         run: |
-          cp weather_forecast.svg target-repo/assets/
+          cp ./weather_forecast.svg target-repo/assets/
           cd target-repo
           git config user.name github-actions
           git config user.email github-actions@github.com
