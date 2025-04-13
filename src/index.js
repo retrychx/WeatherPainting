@@ -104,7 +104,7 @@ async function generateWeatherSVG() {
     <rect width="${svgWidth}" height="${svgHeight}" fill="transparent"/>
     <text x="${
       svgWidth / 2
-    }" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white" stroke="black" stroke-width="0.5">连江县七天天气预报(免费Api可能不太准)</text>
+    }" y="20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white" stroke="black" stroke-width="0.5">连江县七天天气预报</text>
 `;
 
     // 并行加载所有图标
