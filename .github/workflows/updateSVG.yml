@@ -1,41 +1,45 @@
 name: Update Weather Forecast SVG
 
 on:
-  push:
-    branches:
-      - main
+  push: # 移除分支限制，响应所有推送
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 0:00 运行
+    - cron: "0 0 * * *"
 
 jobs:
   update-weather-svg:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
+      - name: Debug Information
+        run: |
+          echo "触发事件: ${{ github.event_name }}"
+          echo "当前分支: ${{ github.ref }}"
+          echo "提交SHA: ${{ github.sha }}"
+
       - name: Checkout WeatherPainting
         uses: actions/checkout@v3
-        
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-          
+          python-version: "3.x"
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          
+
       - name: Generate SVG
         run: python generate_weather_svg.py
-        
+
       - name: Checkout target repo
         uses: actions/checkout@v3
         with:
           repository: Simonmie/Simonmie
           path: target-repo
           token: ${{ secrets.PAT_TOKEN }}
-          
+
       - name: Copy and commit SVG
         run: |
           cp weather_forecast.svg target-repo/assets/
