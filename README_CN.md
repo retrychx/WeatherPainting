@@ -17,7 +17,7 @@ WeatherPainting 是一个使用JavaScript结合Github workflow实现的绘制7�
 
 ## 如何使用？
 
-1. fork这个项目,并为你fork到的项目创建Github Page(由于Github的安全策略，我们需要使用Github Page这种方式去存放我们生成的SVG图片)
+1. 克隆这个项目,并为你克隆到的项目创建Github Page(由于Github的安全策略，我们需要使用Github Page这种方式去存放我们生成的SVG图片)
 2. 配置好仓空Github workflow相关的配置项
 3. 修改src/index.js中的参数(已经用TODO注释好)，修改成你自己的参数，并提交到Github
 4. 当Github Page和Github workflow都配置完成后，在你的readme中添加如下代码
