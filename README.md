@@ -23,5 +23,5 @@ Cool, right? So how do you install it in your readme? Keep reading!
 4. After both Github Page and Github workflow are configured, add the following code to your readme
 
 ```markdown
-<img src="https://youname.github.io/WeatherPainting/src/weather_forecast.svg" />
+<img src="https://retrychx.github.io/WeatherPainting/src/weather_forecast.svg" />
 ```
