@@ -72,8 +72,8 @@ async function generateWeatherSVG() {
   try {
     // TODO: 填写目标城市的经纬度
     // 这里以福州连江为例
-    const latitude = 30.287459; // 福州连江的纬度
-    const longitude = 120.153576; // 福州连江的经度
+    const latitude = 30.274084; // 福州连江的纬度
+    const longitude = 120.155070; // 福州连江的经度
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FShanghai&forecast_days=7`;
 
     const response = await fetch(url);
